@@ -23,20 +23,17 @@ public class ProfissionalService implements IService<Profissional> {
 
     @Override
     public Profissional get(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public Profissional save(Profissional objeto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return repo.save(objeto);
     }
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        repo.deleteById(id);
     }
     
 }

@@ -1,11 +1,16 @@
 package com.ricardo.sistema.sistemaapi.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-public class Profissional {
+@Entity
+public class Profissional implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,10 +18,10 @@ public class Profissional {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String nome;
 
-    @Column(nullable = false)
-    private String cargo;
+    @ManyToOne
+    private Cargo cargo;
 
     @Column(nullable = false)
     private String email;
@@ -32,19 +37,19 @@ public class Profissional {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 
@@ -63,4 +68,5 @@ public class Profissional {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
