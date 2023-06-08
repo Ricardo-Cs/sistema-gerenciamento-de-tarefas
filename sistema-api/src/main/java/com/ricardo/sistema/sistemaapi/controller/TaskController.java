@@ -56,7 +56,7 @@ public class TaskController implements IController<Task>{
 
     @Override
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(Long id) {
+    public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         service.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
