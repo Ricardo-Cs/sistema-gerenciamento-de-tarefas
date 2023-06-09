@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Task implements Serializable {
@@ -24,7 +25,10 @@ public class Task implements Serializable {
     
     @Column(nullable = false)
     private LocalDate due_date;
-    
+
+    @ManyToOne
+    private Profissional Profissional;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private EPriority priority;
@@ -44,14 +48,6 @@ public class Task implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -68,12 +64,12 @@ public class Task implements Serializable {
         this.due_date = due_date;
     }
 
-    public EStatus getStatus() {
-        return status;
+    public Profissional getProfissional() {
+        return Profissional;
     }
 
-    public void setStatus(EStatus status) {
-        this.status = status;
+    public void setProfissional(Profissional profissional) {
+        Profissional = profissional;
     }
 
     public EPriority getPriority() {
@@ -83,4 +79,21 @@ public class Task implements Serializable {
     public void setPriority(EPriority priority) {
         this.priority = priority;
     }
+
+    public EStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EStatus status) {
+        this.status = status;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 }
