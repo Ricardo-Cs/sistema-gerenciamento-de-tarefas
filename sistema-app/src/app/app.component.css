@@ -1,0 +1,62 @@
+/* Header */
+
+header {
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+#nav-principal ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    font-weight: 600;
+    padding: 1.2rem;
+}
+
+#nav-principal ul li a {
+    color: #000;
+    position: relative;
+}
+
+#nav-principal ul li a:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+#user-config button {
+    cursor: pointer;
+}
+
+#solicitacao-li {
+    position: relative;
+}
+
+.notificacao-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fd3131;
+    top: -10px;
+    right: -8px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+}
