@@ -29,8 +29,8 @@ public class Tarefa implements Serializable {
     @ManyToOne
     private Profissional Profissional;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private EPriority priority;
 
     @Column(nullable = false)

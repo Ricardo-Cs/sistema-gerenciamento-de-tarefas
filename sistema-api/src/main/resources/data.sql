@@ -11,4 +11,6 @@ INSERT INTO `cargo` VALUES
     (2, 'Desenvolvedor'),
     (3, 'Contador');
 
+-- INSERT INTO 'solicitaacao' VALUES
+
 SET SESSION FOREIGN_KEY_CHECKS=1;
