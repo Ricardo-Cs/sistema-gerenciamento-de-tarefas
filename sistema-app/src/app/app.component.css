@@ -58,5 +58,13 @@ header {
 footer {
     display: flex;
     flex-direction: column;
-    justify-self: flex-end;
+    margin-top: auto;
+    padding: 1rem;
+    gap: 5px;
+    background-color: #fff;
+}
+
+.copyright {
+    margin: 0 auto;
+    font-size: 0.8rem;
 }

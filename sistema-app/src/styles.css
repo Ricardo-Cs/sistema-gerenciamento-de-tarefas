@@ -21,11 +21,10 @@ a {
 body {
     background-color: #D9D9D9;
     font-family: 'Nunito Sans', sans-serif;
-    height: 100vh;
 }
 
 app-root {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
