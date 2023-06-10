@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Task implements Serializable {
+public class Tarefa implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

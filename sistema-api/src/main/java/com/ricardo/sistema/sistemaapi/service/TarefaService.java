@@ -4,30 +4,30 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ricardo.sistema.sistemaapi.model.Task;
-import com.ricardo.sistema.sistemaapi.repository.TaskRepository;
+import com.ricardo.sistema.sistemaapi.model.Tarefa;
+import com.ricardo.sistema.sistemaapi.repository.TarefaRepository;
 
 @Service
-public class TaskService implements IService<Task> {
+public class TarefaService implements IService<Tarefa> {
     
-    private TaskRepository repo;
+    private TarefaRepository repo;
 
-    public TaskService (TaskRepository repo) {
+    public TarefaService (TarefaRepository repo) {
         this.repo = repo;
     }
 
     @Override
-    public List<Task> get() {
+    public List<Tarefa> get() {
         return repo.findAll();
     }
 
     @Override
-    public Task get(Long id) {
+    public Tarefa get(Long id) {
         return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Task save(Task objeto) {
+    public Tarefa save(Tarefa objeto) {
         return repo.save(objeto);
     }
 

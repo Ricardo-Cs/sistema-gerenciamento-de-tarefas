@@ -2,8 +2,8 @@ package com.ricardo.sistema.sistemaapi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.ricardo.sistema.sistemaapi.model.Task;
+import com.ricardo.sistema.sistemaapi.model.Tarefa;
 
-public interface TaskRepository extends JpaRepository<Task, Long>{
+public interface TarefaRepository extends JpaRepository<Tarefa, Long>{
     
 }

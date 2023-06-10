@@ -13,44 +13,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ricardo.sistema.sistemaapi.model.Task;
-import com.ricardo.sistema.sistemaapi.service.TaskService;
+import com.ricardo.sistema.sistemaapi.model.Tarefa;
+import com.ricardo.sistema.sistemaapi.service.TarefaService;
 
 @RestController
-@RequestMapping("/task")
-public class TaskController implements IController<Task>{
+@RequestMapping("/tarefa")
+public class TarefaController implements IController<Tarefa>{
 
-    private TaskService service;
+    private TarefaService service;
 
-    public TaskController (TaskService service) {
+    public TarefaController (TarefaService service) {
         this.service = service;
     }
 
     @Override
     @GetMapping("/")
-    public ResponseEntity<List<Task>> get() {
-        List<Task> registros = service.get();
+    public ResponseEntity<List<Tarefa>> get() {
+        List<Tarefa> registros = service.get();
         return new ResponseEntity<>(registros, HttpStatus.OK);
     }
 
     @Override
     @GetMapping("/{id}")
-    public ResponseEntity<Task> get(@PathVariable("id") Long id) {
-        Task registro = service.get(id);
+    public ResponseEntity<Tarefa> get(@PathVariable("id") Long id) {
+        Tarefa registro = service.get(id);
         return new ResponseEntity<>(registro, HttpStatus.OK);
     }
 
     @Override
     @PostMapping("/")
-    public ResponseEntity<Task> insert(@RequestBody Task objeto) {
-        Task registro = service.save(objeto);
+    public ResponseEntity<Tarefa> insert(@RequestBody Tarefa objeto) {
+        Tarefa registro = service.save(objeto);
         return new ResponseEntity<>(registro, HttpStatus.CREATED);
     }
 
     @Override
     @PutMapping("/")
-    public ResponseEntity<Task> update(@RequestBody Task objeto) {
-        Task registro = service.save(objeto);
+    public ResponseEntity<Tarefa> update(@RequestBody Tarefa objeto) {
+        Tarefa registro = service.save(objeto);
         return new ResponseEntity<>(registro, HttpStatus.CREATED);
     }
 
