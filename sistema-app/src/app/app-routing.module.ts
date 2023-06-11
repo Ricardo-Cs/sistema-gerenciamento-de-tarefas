@@ -6,7 +6,7 @@ import { TarefasListComponent } from "./component/tarefas-list/tarefas-list.comp
 
 const routes: Routes = [
     { path: 'login', component: LoginPageComponent },
-    { path: 'tarefas', component: TarefasListComponent }
+    { path: 'tarefa', component: TarefasListComponent }
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ export class TarefasService implements IService<Tarefas>{
 
   constructor(private http: HttpClient) { }
 
-  apiUrl: string = environment.API_URL + "/tarefas/";
+  apiUrl: string = environment.API_URL + "/tarefa/";
 
   get(termoBusca?: string | undefined): Observable<Tarefas[]> {
     let url = this.apiUrl;

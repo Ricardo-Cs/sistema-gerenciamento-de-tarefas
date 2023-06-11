@@ -1,1 +1,37 @@
-<p>tarefas-list works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Tarefa</th>
+            <th>Descrição</th>
+            <th>Data de vencimento</th>
+            <th>Profissional</th>
+            <th>Status</th>
+            <th>Prioridade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td class="fit">{{item.titulo}}</td>
+            <td class="fit">{{item.descricao}}</td>
+            <td>{{item.due_date}}</td>
+            <td>{{item.profissional.nome}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.prioridade}}</td>
+            <td>
+                <a href="./">a</a>
+                <!-- <a class="botao chegada" (click)="updateStatus(item.id)"
+                    [ngClass]="{'inativo': item.status == 'AGENDADO'}">Chegada</a>
+                <a class="botao confirmacao" (click)="updateStatus(item.id)"
+                    [ngClass]="{'inativo': item.status == 'CONFIRMADO'}">Confirmar</a>
+                <a class="botao" routerLink="./form" [queryParams]="{id: item.id}">Editar</a>
+                <a class="botao excluir" (click)="delete(item.id)">Cancelar</a> -->
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Total de registros: {{registros.length}}</td>
+        </tr>
+    </tfoot>
+</table>
