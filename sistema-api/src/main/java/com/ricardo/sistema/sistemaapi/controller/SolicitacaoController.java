@@ -13,44 +13,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ricardo.sistema.sistemaapi.model.Cargo;
-import com.ricardo.sistema.sistemaapi.service.CargoService;
+import com.ricardo.sistema.sistemaapi.model.Solicitacao;
+import com.ricardo.sistema.sistemaapi.service.SolicitacaoService;
 
 @RestController
-@RequestMapping("/cargo")
-public class CargoController implements IController<Cargo> {
+@RequestMapping("/solicitacao")
+public class SolicitacaoController implements IController<Solicitacao>{
 
-    private CargoService service;
+    private SolicitacaoService service;
 
-    public CargoController(CargoService service) {
+    public SolicitacaoController(SolicitacaoService service) {
         this.service = service;
     }
 
     @Override
     @GetMapping("/")
-    public ResponseEntity<List<Cargo>> get() {
-        List<Cargo> registros = service.get();
+    public ResponseEntity<List<Solicitacao>> get() {
+        List<Solicitacao> registros = service.get();
         return new ResponseEntity<>(registros, HttpStatus.OK);
     }
 
     @Override
     @GetMapping("/{id}")
-    public ResponseEntity<Cargo> get(@PathVariable("id") Long id) {
-        Cargo registro = service.get(id);
+    public ResponseEntity<Solicitacao> get(Long id) {
+        Solicitacao registro = service.get(id);
         return new ResponseEntity<>(registro, HttpStatus.OK);
     }
 
     @Override
     @PostMapping("/")
-    public ResponseEntity<Cargo> insert(@RequestBody Cargo objeto) {
-        Cargo registro = service.save(objeto);
+    public ResponseEntity<Solicitacao> insert(@RequestBody Solicitacao objeto) {
+        Solicitacao registro = service.save(objeto);
         return new ResponseEntity<>(registro, HttpStatus.CREATED);
     }
 
     @Override
     @PutMapping("/")
-    public ResponseEntity<Cargo> update(@RequestBody Cargo objeto) {
-        Cargo registro = service.save(objeto);
+    public ResponseEntity<Solicitacao> update(@RequestBody Solicitacao objeto) {
+        Solicitacao registro = service.save(objeto);
         return new ResponseEntity<>(registro, HttpStatus.CREATED);
     }
 
