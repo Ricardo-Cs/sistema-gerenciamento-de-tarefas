@@ -36,6 +36,10 @@ header {
     background-color: #000;
 }
 
+#logo-sgtp img{
+    width: 25%;
+}
+
 #user-config button {
     cursor: pointer;
 }
@@ -62,6 +66,7 @@ footer {
     padding: 1rem;
     gap: 5px;
     background-color: #fff;
+    font-size: 0.9rem;
 }
 
 .copyright {

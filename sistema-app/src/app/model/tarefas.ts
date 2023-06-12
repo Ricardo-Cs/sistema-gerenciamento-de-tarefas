@@ -2,10 +2,10 @@ import { Profissional } from "./profissional";
 
 export interface Tarefas {
     id: number,
-    titulo: string,
-    descricao: string,
+    title: string,
+    description: string,
     due_date: string,
-    prioridade: string,
+    priority: string,
     status: string,
     profissional: Profissional
 }

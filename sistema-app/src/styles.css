@@ -28,3 +28,7 @@ app-root {
     flex-direction: column;
     min-height: 100vh;
 }
+
+table {
+    background-color: #fff;
+}
