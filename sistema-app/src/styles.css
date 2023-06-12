@@ -20,15 +20,59 @@ a {
 
 body {
     background-color: #D9D9D9;
-    font-family: 'Nunito Sans', sans-serif;
 }
 
+body, app-root {
+    font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+}
 app-root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 table {
-    background-color: #fff;
+    width: 99%;
+    border-spacing: 0.1em;
+    margin: 0.5em auto;
+    /* Responsivo */
+    display: block;
+    overflow-x: auto;
+    
+}
+
+table th {
+    background-color: #00478e;
+    color: white;
+}
+
+table td, table th {
+    padding: 0.2rem;
+}
+
+table tbody tr {
+    text-align: center;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #c6d4e2;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #e7ecf1;
+}
+
+table tbody tr:hover {
+    background-color: #cccccc;
+}
+
+table tfoot td {
+    border-top: 1px solid #00478e;
+    text-align: center;
+}
+
+table tbody td:last-child, table tbody td.fit {
+    text-align: center;
+    width: 1%;
+    white-space: nowrap;
 }

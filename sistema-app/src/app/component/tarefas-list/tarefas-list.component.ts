@@ -43,4 +43,16 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
     }
   }
 
+  getStatusColor(status: string): string {
+    switch (status) {
+      case "PENDENTE":
+        return "red"; // cor para o status "Pendente"
+      case "FAZENDO":
+        return "rgb(255, 153, 0)"; // cor para o status "Fazendo"
+      case "COMPLETADO":
+        return "green"; // cor para o status "Completado"
+      default:
+        return "black"; // cor padrão caso nenhum dos valores corresponda
+    }
+  }
 }

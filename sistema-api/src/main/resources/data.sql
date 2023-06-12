@@ -2,7 +2,8 @@ SET SESSION FOREIGN_KEY_CHECKS=0;
 
 INSERT INTO `tarefa` VALUES
     (1, 'Descrição da tarefa 1', '2023-11-01', 'MÉDIA', 'PENDENTE', 'Tarefa 1', 1),
-    (2, 'Descrição da tarefa 2', '2023-11-11', 'ALTA', 'COMPLETADO', 'Tarefa 2', 2);
+    (2, 'Descrição da tarefa 2', '2023-11-11', 'ALTA', 'COMPLETADO', 'Tarefa 2', 2),
+    (3, 'Descrição da tarefa 3', '2023-10-11', 'BAIXA', 'FAZENDO', 'Tarefa 3', 2);
 
 INSERT INTO `profissional` VALUES
     (1, 'admin@gmail.com', 'Ricardo Costa da Silva', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 1),
