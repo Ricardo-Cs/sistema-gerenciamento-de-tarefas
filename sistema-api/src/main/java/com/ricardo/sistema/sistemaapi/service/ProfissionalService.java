@@ -28,6 +28,13 @@ public class ProfissionalService implements IService<Profissional> {
 
     @Override
     public Profissional save(Profissional objeto) {
+            if (objeto.getPassword() == null || objeto.getPassword().isEmpty()) {
+            Long id = objeto.getId();
+            Profissional profissional = repo.findById(id).orElse(null);
+            if (profissional != null) {
+                objeto.setPassword(profissional.getPassword(), false);
+            }
+        }
         return repo.save(objeto);
     }
 
