@@ -21,6 +21,7 @@ public class Seguranca {
 
         http.httpBasic();
         http.cors();
+        // Permite requisições sem limitações
         http.authorizeHttpRequests().anyRequest().permitAll();
         // http.authenticationProvider(authProvider());
 

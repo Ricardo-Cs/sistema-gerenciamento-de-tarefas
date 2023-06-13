@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="isAutenticado()">
     <div class="main-header">
         <a href="" id="logo-sgtp">
             <img src="../assets/img/logo-sgtp.png" alt="Logo do Site">
@@ -30,7 +30,7 @@
 
 <router-outlet></router-outlet>
 
-<footer>
+<footer *ngIf="isAutenticado()">
     <span>SGTP - Sistema de Gerenciamento de Tarefas Profissionais</span>
     <span>Suporte Técnico: (00) 00000-0000</span>
     <span class="copyright">© Todos os direitos reservados</span>
