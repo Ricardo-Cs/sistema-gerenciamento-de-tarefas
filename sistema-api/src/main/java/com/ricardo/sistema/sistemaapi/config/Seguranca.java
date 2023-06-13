@@ -30,7 +30,7 @@ public class Seguranca {
         // http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
         // http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK));
 
-        // http.csrf().disable();
+        http.csrf().disable();
 
         return http.build();
 

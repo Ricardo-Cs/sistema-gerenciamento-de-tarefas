@@ -9,6 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @Entity
 public class Profissional implements Serializable {
     
@@ -27,6 +32,8 @@ public class Profissional implements Serializable {
     private String email;
 
     @Column(nullable = false)
+    @JsonProperty(access = Access.WRITE_ONLY) 
+    // indica que a propriedade só deve ser escrita (serializada) para o JSON e não deve ser lida (desserializada) do JSON.
     private String password;
 
     public Long getId() {
@@ -66,7 +73,18 @@ public class Profissional implements Serializable {
     }
 
     public void setPassword(String password) {
+        // Chama a função que encripta a senha
+        setPassword(password, true);
+    }
+
+    // Encripta a senha se ela for nula
+    public void setPassword(String password, boolean encriptar) {
+        if (password != null && !password.isEmpty() && encriptar) {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            password = passwordEncoder.encode(password);
+        }
         this.password = password;
     }
+
 
 }
