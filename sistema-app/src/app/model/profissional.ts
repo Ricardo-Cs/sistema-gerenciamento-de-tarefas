@@ -5,5 +5,5 @@ export interface Profissional {
     nome: string,
     cargo: Cargo,
     email: string,
-    senha: string
+    password: string
 }
