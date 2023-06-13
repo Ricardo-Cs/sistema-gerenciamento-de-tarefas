@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Profissional } from 'src/app/model/profissional';
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({
@@ -11,4 +13,11 @@ export class LoginComponent {
   constructor(
     private service: LoginService
   ) { }
+
+  profissional: Profissional = <Profissional>{};
+
+  submit(form: NgForm): void {
+    this.service.login(this.profissional);
+    form.resetForm();
+  }
 }
