@@ -6,4 +6,5 @@ import com.ricardo.sistema.sistemaapi.model.Profissional;
 
 public interface ProfissionalRepository extends JpaRepository<Profissional, Long> {
     
+    Profissional findByNome(String profissionalNome);
 }

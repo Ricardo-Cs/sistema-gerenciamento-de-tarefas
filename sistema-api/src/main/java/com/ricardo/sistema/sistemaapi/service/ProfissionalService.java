@@ -27,6 +27,7 @@ public class ProfissionalService implements IService<Profissional> {
     }
 
     @Override
+    // Encripta a senha de profissional, caso não seja.
     public Profissional save(Profissional objeto) {
             if (objeto.getPassword() == null || objeto.getPassword().isEmpty()) {
             Long id = objeto.getId();
@@ -43,4 +44,7 @@ public class ProfissionalService implements IService<Profissional> {
         repo.deleteById(id);
     }
     
+    public Profissional getByNomeProfissional(String nomeUsuario) {
+    return repo.findByNome(nomeUsuario);
+    }
 }
