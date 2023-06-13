@@ -31,8 +31,12 @@ app-root {
     flex-direction: column;
 }
 
+main {
+    padding: 1rem;
+}
+
 table {
-    width: 99%;
+    width: 100%;
     border-spacing: 0.1em;
     margin: 0.5em auto;
     /* Responsivo */
