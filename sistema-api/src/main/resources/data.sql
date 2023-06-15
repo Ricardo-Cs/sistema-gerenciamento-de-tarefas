@@ -6,9 +6,9 @@ INSERT INTO `tarefa` VALUES
     (3, 'Descrição da tarefa 3', '2023-10-11', 'BAIXA', 'FAZENDO', 'Tarefa 3', 2);
 
 INSERT INTO `profissional` VALUES
-    (1, 'admin@gmail.com', 'Ricardo Costa da Silva', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 1),
-    (2, 'anlivia@gmail.com', 'Ana Lívia Dantas', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 2),
-    (3, 'rafaelSD@gmail.com', 'Rafael Silva Dourado', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 3);
+    (1, 'Administrador', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 'Admin', 1),
+    (2, 'Ana Lívia Dantas', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS','Livia-Ana', 2),
+    (3, 'Rafael Silva Dourado', '$2a$10$zArhMpAXoIhDRvqmJSPI2uDJbGxoQft9g2LCa.7fBCOXDuqKVC6cS', 'RafaelD', 3);
 
 INSERT INTO `cargo` VALUES
     (1, 'Gerente'),

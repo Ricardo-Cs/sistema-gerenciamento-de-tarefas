@@ -25,11 +25,12 @@ public class Profissional implements Serializable {
     @Column(nullable = false)
     private String nome;
 
+    @Column(nullable = false)
+    private String username;
+
     @ManyToOne
     private Cargo cargo;
 
-    @Column(nullable = false)
-    private String email;
 
     @Column(nullable = false)
     @JsonProperty(access = Access.WRITE_ONLY) 
@@ -52,20 +53,20 @@ public class Profissional implements Serializable {
         this.nome = nome;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public Cargo getCargo() {
         return cargo;
     }
 
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
@@ -85,6 +86,5 @@ public class Profissional implements Serializable {
         }
         this.password = password;
     }
-
 
 }

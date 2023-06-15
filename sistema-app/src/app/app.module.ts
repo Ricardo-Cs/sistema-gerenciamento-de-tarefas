@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { TarefasListComponent } from './component/tarefas-list/tarefas-list.component';
 import { LoginComponent } from './component/login/login.component';
+import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { LoginComponent } from './component/login/login.component';
     FormsModule ,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: RequisicaoInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

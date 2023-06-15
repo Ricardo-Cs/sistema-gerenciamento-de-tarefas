@@ -29,7 +29,7 @@ public class PerfilProfissional implements UserDetails{
 
     @Override
     public String getUsername() {
-        return profissional.getNome();
+        return profissional.getUsername();
     }
 
     @Override

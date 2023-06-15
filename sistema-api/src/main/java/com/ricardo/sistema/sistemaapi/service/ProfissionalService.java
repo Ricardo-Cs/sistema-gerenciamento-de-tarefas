@@ -44,7 +44,7 @@ public class ProfissionalService implements IService<Profissional> {
         repo.deleteById(id);
     }
     
-    public Profissional getByNomeProfissional(String nomeUsuario) {
-    return repo.findByNome(nomeUsuario);
+    public Profissional getByUsername(String username) {
+    return repo.findByUsername(username);
     }
 }

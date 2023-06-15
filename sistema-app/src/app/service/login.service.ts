@@ -22,7 +22,7 @@ export class LoginService {
   }
 
   isGerente(): boolean {
-    return this.profissional.cargo.nome === "gerente";
+    return this.profissional.cargo.nome === "Gerente";
   }
 
   getProfissional(): Profissional {
@@ -32,7 +32,7 @@ export class LoginService {
   login(profissional: Profissional): void {
 
     this.profissional = profissional;
-    const credenciaisCodificadas = btoa(profissional.nome + ':' + profissional.password);
+    const credenciaisCodificadas = btoa(profissional.username + ':' + profissional.password);
     const opcoesHttp = {
       headers: new HttpHeaders({
         'Authorization': 'Basic ' + credenciaisCodificadas

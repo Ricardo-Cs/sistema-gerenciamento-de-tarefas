@@ -15,7 +15,7 @@ public class PerfilProfissionalService implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Profissional profissional = service.getByNomeProfissional(username);
+        Profissional profissional = service.getByUsername(username);
         return new PerfilProfissional(profissional);
     }
     

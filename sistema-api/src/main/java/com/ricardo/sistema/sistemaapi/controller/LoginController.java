@@ -25,7 +25,7 @@ public class LoginController {
     @GetMapping("/")
     public ResponseEntity<Profissional> getProfissional() {
         Principal principal = SecurityContextHolder.getContext().getAuthentication();
-        Profissional profissional = service.getByNomeProfissional(principal.getName());
+        Profissional profissional = service.getByUsername(principal.getName());
         return new ResponseEntity<>(profissional, HttpStatus.OK);
     }
 }
