@@ -26,6 +26,10 @@ export class TarefasService implements IService<Tarefas>{
     return this.http.get<Tarefas>(this.apiUrl + id);
   }
 
+  getByProfissionalId(id: number): Observable<Tarefas[]> {
+    return this.http.get<Tarefas[]>(this.apiUrl + "profissional/" + id);
+  }
+
   insert(objeto: Tarefas): Observable<Tarefas> {
     return this.http.post<Tarefas>(this.apiUrl, objeto);
   }

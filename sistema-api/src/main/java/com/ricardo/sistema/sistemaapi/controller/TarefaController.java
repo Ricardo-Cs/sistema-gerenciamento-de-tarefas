@@ -33,6 +33,12 @@ public class TarefaController implements IController<Tarefa>{
         return new ResponseEntity<>(registros, HttpStatus.OK);
     }
 
+    @GetMapping("/profissional/{profissionalId}")
+    public ResponseEntity<List<Tarefa>> getByProfissionalId(@PathVariable("profissionalId") Long profissionalId) {
+        List<Tarefa> registros = service.getByProfissionalId(profissionalId);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
+
     @Override
     @GetMapping("/{id}")
     public ResponseEntity<Tarefa> get(@PathVariable("id") Long id) {

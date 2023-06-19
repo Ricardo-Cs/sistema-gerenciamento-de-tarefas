@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IList } from '../i-list';
 import { Tarefas } from 'src/app/model/tarefas';
 import { TarefasService } from 'src/app/service/tarefas.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-tarefas-list',
@@ -11,16 +12,25 @@ import { TarefasService } from 'src/app/service/tarefas.service';
 export class TarefasListComponent implements OnInit, IList<Tarefas> {
 
   constructor (
-    private service: TarefasService
+    private service: TarefasService,
+    private loginService: LoginService
   ) { }
 
 
   ngOnInit(): void {
-    this.get();
+    this.getByProfissionalId(this.loginService.getProfissional().id);
   }
 
   registros: Tarefas[] = Array<Tarefas>();
 
+  getByProfissionalId(id: number): void {
+    this.service.getByProfissionalId(id).subscribe({
+      next: (resposta: Tarefas[]) => {
+        this.registros = resposta;
+      }
+    })
+  }
+  
   get(termoBusca?: string): void {
     this.service.get(termoBusca).subscribe({
       next: (resposta: Tarefas[]) => {

@@ -27,7 +27,7 @@ public class Tarefa implements Serializable {
     private LocalDate due_date;
 
     @ManyToOne
-    private Profissional Profissional;
+    private Profissional profissional;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -65,11 +65,11 @@ public class Tarefa implements Serializable {
     }
 
     public Profissional getProfissional() {
-        return Profissional;
+        return profissional;
     }
 
     public void setProfissional(Profissional profissional) {
-        Profissional = profissional;
+        this.profissional = profissional;
     }
 
     public EPriority getPriority() {
@@ -95,5 +95,6 @@ public class Tarefa implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
 
 }
