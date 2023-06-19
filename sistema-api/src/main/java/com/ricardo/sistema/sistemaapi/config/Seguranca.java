@@ -17,6 +17,24 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class Seguranca {
 
     @Bean
+    public UserDetailsService udService() {
+        return new PerfilProfissionalService();
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(udService());
+        authProvider.setPasswordEncoder(passEncoder());
+        return authProvider;
+    }
+
+    @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.httpBasic();
