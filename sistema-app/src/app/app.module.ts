@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { TarefasListComponent } from './component/tarefas-list/tarefas-list.component';
 import { LoginComponent } from './component/login/login.component';
 import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
+import { SolicitacaoComponent } from './component/solicitacao/solicitacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TarefasListComponent,
-    LoginComponent
+    LoginComponent,
+    SolicitacaoComponent
   ],
   imports: [
     BrowserModule,

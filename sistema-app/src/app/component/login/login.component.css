@@ -1,0 +1,125 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    border-radius: 4px;
+}
+
+h1{
+    font-size: 30px;
+    margin: 0px;
+    color: #727272;
+    margin-bottom: 50px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: 2px;
+    height: 4px;
+    width: 33px;
+    background-color: #009B98;
+}
+
+.form-content {
+    background-color: #FFF;
+    padding: 3.5rem;
+}
+
+input:not([type="submit"]) {
+    display: block;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #727272;
+    width: 300px;
+    z-index: 2;
+}
+
+input[type="submit"] {
+    display: block;
+    border: none;
+    outline: none;
+    background-color: #004F70;
+    color: white;
+    border-radius: 3px;
+    padding: 10px;
+    width: 200px;
+    font-size: 15px;
+    margin: 0 auto;
+    font-weight: bold;
+    transition: .3s ease;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #005f88;
+    transform: scale(1.05);
+}
+
+label {
+    display: block;
+    color: #727272;
+    left: 26px;
+    position: absolute;
+    font-weight: bold;
+    transition: 0.3s ease;
+    bottom: 1px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+picture {
+    position: absolute;
+    bottom: -3px;
+    transition: .3s ease;
+}
+
+.input-form{
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* Limpa input */
+.clear-input {
+    position: absolute;
+    right: -16px;
+    bottom: -6px;
+    color: red;
+    cursor: pointer;
+}
+
+/* "Animação" ao clicar no input do username e senha */
+input:focus ~ #username-label,
+input:valid ~ #username-label{
+    left: 11px;
+}
+
+input:focus ~ #senha-label,
+input:valid ~ #senha-label{
+    left: 18px;
+}
+
+input:focus ~ #username-label,
+input:valid ~ #username-label,
+input:focus ~ #senha-label,
+input:valid ~ #senha-label {
+    bottom: 16px;
+    transform: scale(.8);
+    transition: .3s ease;
+    opacity: 0.5;
+}
+
+input:focus ~ #user-icon,
+input:valid ~ #user-icon,
+input:focus ~ #senha-icon,
+input:valid ~ #senha-icon {
+    bottom: 12px;
+    transform: scale(.8);
+    transition: .3s ease;
+    opacity: 0.5;
+}

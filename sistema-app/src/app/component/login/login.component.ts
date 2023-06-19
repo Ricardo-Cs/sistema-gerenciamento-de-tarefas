@@ -20,4 +20,13 @@ export class LoginComponent {
     this.service.login(this.profissional);
     form.resetForm();
   }
+
+  clearInput(inputName: string) {
+    if (inputName === 'username') {
+      this.profissional.username = '';
+    } else if (inputName === 'senha') {
+      this.profissional.password = '';
+    }
+  }
+  
 }
