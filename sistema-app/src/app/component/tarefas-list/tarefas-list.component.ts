@@ -18,7 +18,12 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
 
 
   ngOnInit(): void {
-    this.getByProfissionalId(this.loginService.getProfissional().id);
+    if(this.loginService.isGerente()) {
+      this.get();
+    } else {
+      this.getByProfissionalId(this.loginService.getProfissional().id);
+    }
+
   }
 
   registros: Tarefas[] = Array<Tarefas>();
