@@ -73,3 +73,7 @@ footer {
     margin: 0 auto;
     font-size: 0.8rem;
 }
+
+.user-info-modal {
+    display: none;
+}

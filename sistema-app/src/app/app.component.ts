@@ -29,4 +29,13 @@ export class AppComponent {
   logout(): void {
     this.servicoLogin.logout();
   }
+
+  modalClick() {
+    const userModal = document.querySelector('.user-info-modal') as HTMLElement;
+    if(userModal.style.display === 'none') {
+      userModal.style.display = 'block';
+    } else {
+      userModal.style.display = 'none';
+    }
+  }
 }
