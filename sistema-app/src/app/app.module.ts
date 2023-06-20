@@ -15,9 +15,9 @@ import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.comp
   declarations: [
     AppComponent,
     TarefasListComponent,
+    TarefasFormComponent,
     LoginComponent,
-    SolicitacaoComponent,
-    TarefasFormComponent
+    SolicitacaoComponent
   ],
   imports: [
     BrowserModule,

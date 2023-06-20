@@ -18,8 +18,8 @@ export class AutenticacaoGuard implements CanActivate {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const autenticado = this.servicoLogin.verificaLogin();
     if (autenticado) {
-      const papelExigido = route.data['cargo.nome'];
-      const papelUsuario = this.servicoLogin.getProfissional().cargo.nome;
+      const papelExigido = route.data['cargo'];
+      const papelUsuario = this.servicoLogin.getProfissional().cargo;
       if (papelExigido && papelExigido != papelUsuario) {
         return false;
       }

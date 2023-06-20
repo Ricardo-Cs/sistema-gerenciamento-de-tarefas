@@ -9,11 +9,11 @@ import { TarefasFormComponent } from "./component/tarefas-form/tarefas-form.comp
 
 const routes: Routes = [
     { path: '', canActivate: [AutenticacaoGuard], children: [
-        { path: 'tarefa', component: TarefasListComponent },
-        { path: 'tarefa/form', component: TarefasFormComponent },
-        { path: 'solicitacao', component: SolicitacaoComponent }
+    { path: 'tarefa', component: TarefasListComponent },
+    { path: 'tarefa/form', component: TarefasFormComponent },
+    { path: 'solicitacao', component: SolicitacaoComponent }
     ]},
-    { path: 'login', component: LoginComponent},
+    { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
