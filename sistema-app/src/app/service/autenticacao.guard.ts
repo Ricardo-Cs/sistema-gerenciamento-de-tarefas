@@ -14,17 +14,19 @@ export class AutenticacaoGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const autenticado = this.servicoLogin.verificaLogin();
-      if (autenticado) {
-        const papelExigido = route.data['cargo.nome'];
-        const papelUsuario = this.servicoLogin.getProfissional().cargo.nome;
-        if (papelExigido && papelExigido != papelUsuario) {
-          return false;
-        }
-        return true;
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const autenticado = this.servicoLogin.verificaLogin();
+    if (autenticado) {
+      const papelExigido = route.data['cargo.nome'];
+      const papelUsuario = this.servicoLogin.getProfissional().cargo.nome;
+      if (papelExigido && papelExigido != papelUsuario) {
+        return false;
       }
-    return false;
+      return true;
+    }
+    return false; // Adiciona o retorno false para casos em que o usuário não esteja autenticado
   }
+  
   
 }
