@@ -18,13 +18,12 @@
             <div class="user-info-modal" #userModal>
                 <ul>
                     <li>
-                        <span>Usuário: </span>
+                        <span class="user-info-title">Usuário: </span>
+                        <span>{{getProfissional().nome}}</span>
                     </li>
                     <li>
-                        <span>Cargo do usuário: </span>
-                    </li>
-                    <li>
-                        <span>Tarefas pendentes: </span>
+                        <span class="user-info-title">Cargo do usuário: </span>
+                        <span>{{getProfissional().cargo.nome}}</span>
                     </li>
                     <li>
                         <span class="logout" (click)="logout()">Logout</span>

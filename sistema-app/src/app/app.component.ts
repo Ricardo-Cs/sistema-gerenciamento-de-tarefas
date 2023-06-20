@@ -32,10 +32,6 @@ export class AppComponent {
 
   modalClick() {
     const userModal = document.querySelector('.user-info-modal') as HTMLElement;
-    if(userModal.style.display === 'none') {
-      userModal.style.display = 'block';
-    } else {
-      userModal.style.display = 'none';
-    }
+    userModal.classList.toggle('active');
   }
 }

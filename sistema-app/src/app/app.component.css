@@ -76,4 +76,43 @@ footer {
 
 .user-info-modal {
     display: none;
+    position: absolute;
+    padding: 0.7rem;
+    right: 6px;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.user-info-modal.active {
+    display: block;
+}
+  
+.user-info-modal ul {
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: column;
+    text-align: left;
+}
+.user-info-modal ul li {
+    list-style: none;
+}
+
+.user-info-title {
+    font-weight: bold;
+}
+
+.logout {
+    cursor: pointer;
+    background-color: #fd3131;
+    color: #FFF;
+    font-weight: bold;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+.user-info-modal ul li:nth-child(3) {
+    margin-top: 15px;
+    text-align: right;
 }
