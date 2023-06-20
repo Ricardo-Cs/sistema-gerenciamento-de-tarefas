@@ -13,7 +13,7 @@ button {
     border: none;
 }
 
-a {
+a, select {
     text-decoration: none;
     cursor: pointer;
 }

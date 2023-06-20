@@ -4,22 +4,22 @@
 
         <input type="hidden" name="id" [(ngModel)]="registro.id">
 
-        <label for="title">Título da tarefa</label>
+        <label for="title">Título da tarefa: </label>
         <input type="text" name="title" [(ngModel)]="registro.title" required>
 
-        <label for="description">Descrição da tarefa</label>
+        <label for="description">Descrição da tarefa: </label>
         <input type="text" name="description" [(ngModel)]="registro.description" required>
 
-        <label for="due_date">Data de vencimento</label>
+        <label for="due_date">Data de vencimento: </label>
         <input type="date" name="due_date" [(ngModel)]="registro.due_date" required>
 
-        <label for="profissional">Profissional</label>
+        <label for="profissional">Profissional: </label>
         <select name="profissional" required [compareWith]="compareById" [(ngModel)]="registro.profissional">
             <option value="" disabled>Selecione</option>
             <option *ngFor="let item of profissionais" [ngValue]="item">{{item.nome}}</option>
         </select>
 
-        <label for="status">Status</label>
+        <label for="status">Status: </label>
         <select name="status" required [(ngModel)]="registro.status">
             <option value="" disabled>Selecione</option>
             <option value="PENDENTE">PENDENTE</option>
@@ -27,7 +27,7 @@
             <option value="COMPLETADO">COMPLETADO</option>
         </select>
 
-        <label for="priority">Prioridade</label>
+        <label for="priority">Prioridade: </label>
         <select name="priority" required [(ngModel)]="registro.priority">
             <option value="" disabled>Selecione</option>
             <option value="BAIXA">BAIXA</option>
@@ -37,7 +37,10 @@
 
     </div>
 
-    <input type="button" value="Cancelar" routerLink="../">
-    <input type="submit" value="Salvar" [disabled]="form.invalid">
+    <div class="botoes">
+        <input type="button" value="Cancelar" routerLink="../">
+        <input type="submit" value="Salvar" [disabled]="form.invalid">
+    </div>
+
 
 </form>

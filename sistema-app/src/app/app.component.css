@@ -112,6 +112,10 @@ footer {
     border-radius: 5px;
 }
 
+.logout:hover {
+    background-color: #cc2525;
+}
+
 .user-info-modal ul li:nth-child(3) {
     margin-top: 15px;
     text-align: right;
