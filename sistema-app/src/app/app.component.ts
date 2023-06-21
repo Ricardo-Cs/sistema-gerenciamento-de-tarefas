@@ -11,23 +11,23 @@ export class AppComponent {
   title = 'sistema-app';
 
   constructor(
-    private servicoLogin: LoginService
+    private serviceLogin: LoginService
   ) {}
 
   isAutenticado(): boolean {
-    return this.servicoLogin.isAutenticado();
+    return this.serviceLogin.isAutenticado();
   }
 
   isAdmin(): boolean {
-    return this.servicoLogin.isGerente();
+    return this.serviceLogin.isGerente();
   }
 
   getProfissional(): Profissional {
-    return this.servicoLogin.getProfissional();
+    return this.serviceLogin.getProfissional();
   }
 
   logout(): void {
-    this.servicoLogin.logout();
+    this.serviceLogin.logout();
   }
 
   modalClick() {

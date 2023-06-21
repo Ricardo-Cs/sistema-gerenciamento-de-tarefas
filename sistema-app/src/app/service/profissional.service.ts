@@ -17,7 +17,7 @@ export class ProfissionalService implements IService<Profissional> {
   get(termoBusca?: string | undefined): Observable<Profissional[]> {
     let url = this.apiUrl;
     if(termoBusca) {
-      url += 'busca/' + termoBusca;
+      url += "busca/" + termoBusca;
     }
     return this.http.get<Profissional[]>(url);
   }

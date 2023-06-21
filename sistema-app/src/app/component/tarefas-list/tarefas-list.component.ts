@@ -13,15 +13,15 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
 
   constructor (
     private service: TarefasService,
-    private loginService: LoginService
+    private serviceLogin: LoginService
   ) { }
 
 
   ngOnInit(): void {
-    if(this.loginService.isGerente()) {
+    if(this.serviceLogin.isGerente()) {
       this.get();
     } else {
-      this.getByProfissionalId(this.loginService.getProfissional().id);
+      this.getByProfissionalId(this.serviceLogin.getProfissional().id);
     }
 
   }
@@ -56,6 +56,10 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
         }
       });
     }
+  }
+
+  isAdmin(): boolean {
+    return this.serviceLogin.isGerente();
   }
 
   getStatusColor(status: string): string {

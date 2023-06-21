@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { TarefasListComponent } from './component/tarefas-list/tarefas-list.component';
 import { LoginComponent } from './component/login/login.component';
 import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
-import { SolicitacaoComponent } from './component/solicitacao/solicitacao.component';
 import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.component';
 
 @NgModule({
@@ -16,8 +15,7 @@ import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.comp
     AppComponent,
     TarefasListComponent,
     TarefasFormComponent,
-    LoginComponent,
-    SolicitacaoComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
