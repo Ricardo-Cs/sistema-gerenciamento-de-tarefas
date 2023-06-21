@@ -42,4 +42,8 @@ export class TarefasService implements IService<Tarefas>{
     return this.http.delete<void>(this.apiUrl + id);
   }
 
+  updateStatus(id: number): Observable<Tarefas> {
+    return this.http.put<Tarefas>(this.apiUrl + "status/" + id, null);
+  }
+
 }

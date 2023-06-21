@@ -67,4 +67,9 @@ public class TarefaController implements IController<Tarefa>{
         return new ResponseEntity<>(HttpStatus.OK);
     }
     
+    @PutMapping("/status/{id}")
+    public ResponseEntity<Tarefa> updateStatus(@PathVariable("id") Long id) {
+        Tarefa registro = service.updateStatus(id);
+        return new ResponseEntity<>(registro, HttpStatus.OK);
+    }
 }

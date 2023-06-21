@@ -45,5 +45,11 @@ public class TarefaService implements IService<Tarefa> {
         return tarefas;
     }
 
+    public Tarefa updateStatus(Long id) {
+        Tarefa registro = repo.findById(id).orElse(null);
+        registro.setStatus(registro.getStatus().proximo());
+        repo.save(registro);
+        return registro;
+    } 
 
 }

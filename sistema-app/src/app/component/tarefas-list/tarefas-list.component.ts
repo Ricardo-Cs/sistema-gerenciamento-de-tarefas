@@ -28,6 +28,11 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
 
   registros: Tarefas[] = Array<Tarefas>();
 
+  
+  isAdmin(): boolean {
+    return this.serviceLogin.isGerente();
+  }
+
   getByProfissionalId(id: number): void {
     this.service.getByProfissionalId(id).subscribe({
       next: (resposta: Tarefas[]) => {
@@ -58,8 +63,12 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
     }
   }
 
-  isAdmin(): boolean {
-    return this.serviceLogin.isGerente();
+  updateStatus(id: number): void {
+    if (confirm('Confirma alteração no status da sua tarefa?')) {
+      this.service.updateStatus(id).subscribe({
+        complete: () => this.ngOnInit()
+      });
+    }
   }
 
   getStatusColor(status: string): string {
