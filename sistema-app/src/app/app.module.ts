@@ -9,13 +9,15 @@ import { TarefasListComponent } from './component/tarefas-list/tarefas-list.comp
 import { LoginComponent } from './component/login/login.component';
 import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
 import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.component';
+import { SolicitacaoListComponent } from './component/solicitacao-list/solicitacao-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TarefasListComponent,
     TarefasFormComponent,
-    LoginComponent
+    LoginComponent,
+    SolicitacaoListComponent
   ],
   imports: [
     BrowserModule,

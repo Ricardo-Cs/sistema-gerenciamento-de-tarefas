@@ -26,6 +26,10 @@ export class SolicitacaoService implements IService<Solicitacao> {
     return this.http.get<Solicitacao>(this.apiUrl + id);
   }
 
+  getByProfissionalId(id: number): Observable<Solicitacao[]> {
+    return this.http.get<Solicitacao[]>(this.apiUrl + "profissional/" + id);
+  }
+
   insert(objeto: Solicitacao): Observable<Solicitacao> {
     return this.http.post<Solicitacao>(this.apiUrl, objeto);
   }

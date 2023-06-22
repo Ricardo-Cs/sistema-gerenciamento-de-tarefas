@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.ricardo.sistema.sistemaapi.model.Profissional;
 import com.ricardo.sistema.sistemaapi.model.Solicitacao;
 import com.ricardo.sistema.sistemaapi.repository.SolicitacaoRepository;
 
@@ -11,9 +12,11 @@ import com.ricardo.sistema.sistemaapi.repository.SolicitacaoRepository;
 public class SolicitacaoService implements IService<Solicitacao> {
 
     private SolicitacaoRepository repo;
+    private ProfissionalService serviceProfissional;
 
-    public SolicitacaoService(SolicitacaoRepository repo) {
+    public SolicitacaoService(SolicitacaoRepository repo, ProfissionalService serviceProfissional) {
         this.repo = repo;
+        this.serviceProfissional = serviceProfissional;
     }
 
     @Override
@@ -34,6 +37,12 @@ public class SolicitacaoService implements IService<Solicitacao> {
     @Override
     public void delete(Long id) {
         repo.deleteById(id);
+    }
+
+    public List<Solicitacao> getByProfissionalId(Long profissionalId) {
+        Profissional profissional = serviceProfissional.get(profissionalId);
+        List<Solicitacao> solicitacoes = repo.findByProfissionalSolicitado(profissional);
+        return solicitacoes;
     }
     
 }

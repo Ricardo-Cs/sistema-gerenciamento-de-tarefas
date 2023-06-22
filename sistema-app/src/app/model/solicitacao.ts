@@ -6,6 +6,6 @@ export interface Solicitacao {
     data: string,
     status: string,
     tarefa: Tarefas,
-    profissional_solicitado: Profissional
-    profissional_solicitante: Profissional
+    profissionalSolicitado: Profissional
+    profissionalSolicitante: Profissional
 }

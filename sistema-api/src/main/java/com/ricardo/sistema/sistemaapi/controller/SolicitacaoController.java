@@ -39,6 +39,12 @@ public class SolicitacaoController implements IController<Solicitacao>{
         Solicitacao registro = service.get(id);
         return new ResponseEntity<>(registro, HttpStatus.OK);
     }
+   
+    @GetMapping("/profissional/{profissionalId}")
+    public ResponseEntity<List<Solicitacao>> getByProfissionalId(@PathVariable("profissionalId") Long profissionalId) {
+        List<Solicitacao> registros = service.getByProfissionalId(profissionalId);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
 
     @Override
     @PostMapping("/")

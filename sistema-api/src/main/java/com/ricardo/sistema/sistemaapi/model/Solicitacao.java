@@ -24,10 +24,10 @@ public class Solicitacao implements Serializable {
     private Tarefa tarefa;
 
     @ManyToOne
-    private Profissional profissional_solicitado;
+    private Profissional profissionalSolicitado;
 
     @ManyToOne
-    private Profissional profissional_solicitante;
+    private Profissional profissionalSolicitante;
 
     @Column(nullable = false)
     private LocalDate data;
@@ -52,20 +52,20 @@ public class Solicitacao implements Serializable {
         this.tarefa = tarefa;
     }
 
-    public Profissional getProfissional_solicitado() {
-        return profissional_solicitado;
+    public Profissional getProfissionalSolicitado() {
+        return profissionalSolicitado;
     }
 
-    public void setProfissional_solicitado(Profissional profissional_solicitado) {
-        this.profissional_solicitado = profissional_solicitado;
+    public void setProfissionalSolicitado(Profissional profissionalSolicitado) {
+        this.profissionalSolicitado = profissionalSolicitado;
     }
 
-    public Profissional getProfissional_solicitante() {
-        return profissional_solicitante;
+    public Profissional getProfissionalSolicitante() {
+        return profissionalSolicitante;
     }
 
-    public void setProfissional_solicitante(Profissional profissional_solicitante) {
-        this.profissional_solicitante = profissional_solicitante;
+    public void setProfissionalSolicitante(Profissional profissionalSolicitante) {
+        this.profissionalSolicitante = profissionalSolicitante;
     }
 
     public LocalDate getData() {
@@ -83,5 +83,4 @@ public class Solicitacao implements Serializable {
     public void setStatus(ESolicitacaoStatus status) {
         this.status = status;
     }
-
 }

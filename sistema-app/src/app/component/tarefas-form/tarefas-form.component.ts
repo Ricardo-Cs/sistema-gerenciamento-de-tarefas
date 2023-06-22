@@ -88,12 +88,12 @@ export class TarefasFormComponent implements IForm<Tarefas>, OnInit {
     } else {
 
       this.solicitacao.tarefa = this.registro;
-      this.solicitacao.profissional_solicitado = this.registro.profissional;
-      this.solicitacao.profissional_solicitante = this.serviceLogin.getProfissional();
+      this.solicitacao.profissionalSolicitado = this.registro.profissional;
+      this.solicitacao.profissionalSolicitante = this.serviceLogin.getProfissional();
       this.solicitacao.data = "2023-11-01";
       this.solicitacao.status = "SOLICITADA";
 
-      if(this.serviceLogin.getProfissional().nome === this.solicitacao.profissional_solicitado.nome) {
+      if(this.serviceLogin.getProfissional().nome === this.solicitacao.profissionalSolicitado.nome) {
         alert('O profissional selecionado é o mesmo que já está atribuído à tarefa.');
         return;
 

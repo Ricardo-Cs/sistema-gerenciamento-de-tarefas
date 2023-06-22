@@ -1,0 +1,38 @@
+<table *ngIf="registros.length > 0">
+    <thead>
+        <tr>
+            <th>Tarefa Solicitada</th>
+            <th>Profissional Solicitante</th>
+            <th *ngIf="isGerente()">Profissional Solicitado</th>
+            <th>Data de Solicitação</th>
+            <th>Status</th>
+            <th *ngIf="isGerente()">Ação</th>
+            <th *ngIf="!isGerente()">Aceitar?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td>{{item.tarefa.title}}</td>
+            <td>{{item.profissionalSolicitante.nome}}</td>
+            <td *ngIf="isGerente()">{{item.profissionalSolicitado.nome}}</td>
+            <td>{{item.data}}</td>
+            <td>{{item.status}}</td>
+            <td *ngIf="isGerente()">
+                <a (click)="delete(item.id)" *ngIf="isGerente()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="red">
+                        <path
+                            d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-4.793 9.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z" />
+                    </svg>
+                </a>
+            </td>
+            <td *ngIf="!isGerente()">Sim</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Total de registros: {{registros.length}}</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p *ngIf="registros.length === 0">Você não tem solicitações de tarefas!</p>
