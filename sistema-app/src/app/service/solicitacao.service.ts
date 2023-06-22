@@ -29,9 +29,11 @@ export class SolicitacaoService implements IService<Solicitacao> {
   insert(objeto: Solicitacao): Observable<Solicitacao> {
     return this.http.post<Solicitacao>(this.apiUrl, objeto);
   }
+
   update(objeto: Solicitacao): Observable<Solicitacao> {
     return this.http.put<Solicitacao>(this.apiUrl, objeto);
   }
+  
   delete(id: number): Observable<void> {
     return this.http.delete<void>(this.apiUrl + id);
   }

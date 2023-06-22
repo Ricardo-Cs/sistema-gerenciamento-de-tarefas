@@ -3,6 +3,8 @@ import { IList } from '../i-list';
 import { Tarefas } from 'src/app/model/tarefas';
 import { TarefasService } from 'src/app/service/tarefas.service';
 import { LoginService } from 'src/app/service/login.service';
+import { SolicitacaoService } from 'src/app/service/solicitacao.service';
+import { Solicitacao } from 'src/app/model/solicitacao';
 
 @Component({
   selector: 'app-tarefas-list',
@@ -23,7 +25,6 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
     } else {
       this.getByProfissionalId(this.serviceLogin.getProfissional().id);
     }
-
   }
 
   registros: Tarefas[] = Array<Tarefas>();
@@ -66,7 +67,9 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
   updateStatus(id: number): void {
     if (confirm('Confirma alteração no status da sua tarefa?')) {
       this.service.updateStatus(id).subscribe({
-        complete: () => this.ngOnInit()
+        complete: () => {
+          this.ngOnInit()
+        }
       });
     }
   }

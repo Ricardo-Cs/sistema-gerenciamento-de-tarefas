@@ -5,22 +5,24 @@
         <input type="hidden" name="id" [(ngModel)]="registro.id">
 
         <label for="title">Título da tarefa: </label>
-        <input type="text" name="title" [(ngModel)]="registro.title" required>
+        <input type="text" name="title" [(ngModel)]="registro.title" required [disabled]="!isGerente()">
 
         <label for="description">Descrição da tarefa: </label>
-        <input type="text" name="description" [(ngModel)]="registro.description" required>
+        <input type="text" name="description" [(ngModel)]="registro.description" required [disabled]="!isGerente()">
 
         <label for="due_date">Data de vencimento: </label>
-        <input type="date" name="due_date" [(ngModel)]="registro.due_date" required>
+        <input type="date" name="due_date" [(ngModel)]="registro.due_date" required [disabled]="!isGerente()">
 
         <label for="profissional">Profissional: </label>
         <select name="profissional" required [compareWith]="compareById" [(ngModel)]="registro.profissional">
             <option value="" disabled>Selecione</option>
-            <option *ngFor="let item of profissionais" [ngValue]="item">{{item.nome}}</option>
+            <option *ngFor="let item of profissionais" [ngValue]="item" [disabled]="profissionalLogado() === item.nome">
+                {{item.nome}}
+            </option>
         </select>
 
         <label for="status">Status: </label>
-        <select name="status" required [(ngModel)]="registro.status">
+        <select name="status" required [(ngModel)]="registro.status" [disabled]="!isGerente()">
             <option value="" disabled>Selecione</option>
             <option value="PENDENTE">PENDENTE</option>
             <option value="FAZENDO">FAZENDO</option>
@@ -28,7 +30,7 @@
         </select>
 
         <label for="priority">Prioridade: </label>
-        <select name="priority" required [(ngModel)]="registro.priority">
+        <select name="priority" required [(ngModel)]="registro.priority" [disabled]="!isGerente()">
             <option value="" disabled>Selecione</option>
             <option value="BAIXA">BAIXA</option>
             <option value="MÉDIA">MÉDIA</option>
