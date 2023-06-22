@@ -29,7 +29,7 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
   registros: Tarefas[] = Array<Tarefas>();
 
   
-  isAdmin(): boolean {
+  isGerente(): boolean {
     return this.serviceLogin.isGerente();
   }
 
@@ -50,7 +50,7 @@ export class TarefasListComponent implements OnInit, IList<Tarefas> {
   }
 
   delete(id: number): void {
-    if (confirm('Deseja realmente excluir o convênio?')) {
+    if (confirm('Deseja realmente excluir a tarefa?')) {
       this.service.delete(id).subscribe({
         complete: () => {
           this.get();
