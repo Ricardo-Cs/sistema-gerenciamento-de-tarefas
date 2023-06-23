@@ -21,6 +21,10 @@ public class CargoService implements IService<Cargo>{
         return repo.findAll();
     }
 
+    public List<Cargo> get(String termoBusca) {
+        return repo.findByAll(termoBusca);
+    }
+
     @Override
     public Cargo get(Long id) {
         return repo.findById(id).orElse(null);

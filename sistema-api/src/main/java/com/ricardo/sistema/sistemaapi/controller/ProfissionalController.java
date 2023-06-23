@@ -40,6 +40,12 @@ public class ProfissionalController implements IController<Profissional>{
         return new ResponseEntity<>(registro, HttpStatus.OK);
     }
 
+    @GetMapping("/busca/{termoBusca}")
+    public ResponseEntity<List<Profissional>> get(@PathVariable("termoBusca") String termoBusca) {
+        List<Profissional> registros = service.get(termoBusca);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
+
     @Override
     @PostMapping("/")
     public ResponseEntity<Profissional> insert(@RequestBody Profissional objeto) {

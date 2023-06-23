@@ -33,6 +33,12 @@ public class CargoController implements IController<Cargo> {
         return new ResponseEntity<>(registros, HttpStatus.OK);
     }
 
+    @GetMapping("/busca/{termoBusca}")
+    public ResponseEntity<List<Cargo>> get(@PathVariable("termoBusca") String termoBusca) {
+        List<Cargo> registros = service.get(termoBusca);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
+
     @Override
     @GetMapping("/{id}")
     public ResponseEntity<Cargo> get(@PathVariable("id") Long id) {

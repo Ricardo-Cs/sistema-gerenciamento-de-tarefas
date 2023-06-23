@@ -1,0 +1,42 @@
+<app-barra-comandos (eventoBusca)="get($event)" *ngIf="isGerente()"></app-barra-comandos>
+
+<table *ngIf="isGerente()">
+    <thead>
+        <tr>
+            <th>Nome do cargo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registros">
+            <td>{{item.nome}}</td>
+            <td class="column-acoes">
+
+                <!-- Edit tarefa button (only for Gerente) -->
+                <a routerLink="./form" [queryParams]="{id: item.id}">
+                    <svg xmlns=" http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#1cd016">
+                        <path
+                            d="m7 17.013 4.413-.015 9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583v4.43zM18.045 4.458l1.589 1.583-1.597 1.582-1.586-1.585 1.594-1.58zM9 13.417l6.03-5.973 1.586 1.586-6.029 5.971L9 15.006v-1.589z" />
+                        <path
+                            d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2z" />
+                    </svg>
+                </a>
+
+                <!-- Delete button (only for Gerente) -->
+                <a (click)="delete(item.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="red">
+                        <path
+                            d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-4.793 9.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z" />
+                    </svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">Total de registros: {{registros.length}}</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p *ngIf="!isGerente()">Apenas o Gerente pode acessar a lista de cargos!</p>

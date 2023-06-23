@@ -11,6 +11,10 @@ import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
 import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.component';
 import { SolicitacaoListComponent } from './component/solicitacao-list/solicitacao-list.component';
 import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
+import { ProfissionalListComponent } from './component/profissional-list/profissional-list.component';
+import { ProfissionalFormComponent } from './component/profissional-form/profissional-form.component';
+import { CargoFormComponent } from './component/cargo-form/cargo-form.component';
+import { CargoListComponent } from './component/cargo-list/cargo-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { BarraComandosComponent } from './component/barra-comandos/barra-comando
     TarefasFormComponent,
     LoginComponent,
     SolicitacaoListComponent,
-    BarraComandosComponent
+    BarraComandosComponent,
+    ProfissionalListComponent,
+    ProfissionalFormComponent,
+    CargoFormComponent,
+    CargoListComponent
   ],
   imports: [
     BrowserModule,
