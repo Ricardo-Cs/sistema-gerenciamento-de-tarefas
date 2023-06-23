@@ -51,6 +51,14 @@ input[type="submit"] {
     transition: 0.3s;
 }
 
+input[type="button"] {
+    background-color: #fd3131;
+}
+
+input[type="submit"] {
+    background-color: #1cd016;
+}
+
 input[type="button"]:hover{
     transform: scale(1.05);
     background-color: #cc2525;
@@ -59,14 +67,6 @@ input[type="button"]:hover{
 input[type="submit"]:hover {
     transform: scale(1.05);
     background-color: #18b112;
-}
-
-input[type="button"] {
-    background-color: #fd3131;
-}
-
-input[type="submit"] {
-    background-color: #1cd016;
 }
 .botoes {
     display: flex;

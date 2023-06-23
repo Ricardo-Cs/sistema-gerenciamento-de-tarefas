@@ -1,4 +1,4 @@
-<table *ngIf="registros.length > 0">
+<table *ngIf="registros.length > 0 || isGerente()">
     <thead>
         <tr>
             <th>Tarefa Solicitada</th>
@@ -25,7 +25,10 @@
                     </svg>
                 </a>
             </td>
-            <td *ngIf="!isGerente()">Sim</td>
+            <td *ngIf="!isGerente()" class="solicitacao-botoes">
+                <a (click)="acceptSolicitacao(item.tarefa, item.id)">Sim</a>
+                <a (click)="rejectSolicitacao(item.id)">Não</a>
+            </td>
         </tr>
     </tbody>
     <tfoot>
@@ -35,4 +38,4 @@
     </tfoot>
 </table>
 
-<p *ngIf="registros.length === 0">Você não tem solicitações de tarefas!</p>
+<p *ngIf="registros.length === 0 && !isGerente()">Você não tem solicitações de tarefas!</p>

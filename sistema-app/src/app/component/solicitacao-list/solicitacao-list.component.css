@@ -1,0 +1,24 @@
+.solicitacao-botoes a:first-child {
+    margin-right: 10px;
+    background-color: #1cd016;
+    color: #fff;
+    font-weight: bold;
+    padding: 0rem 0.6rem;
+    border-radius: 5px;
+}
+
+.solicitacao-botoes a:first-child:hover {
+    background-color: #18b112;
+}
+
+.solicitacao-botoes a:nth-child(2) {
+    background-color: #fd3131;
+    color: #FFF;
+    font-weight: bold;
+    padding: 0rem 0.6rem;
+    border-radius: 5px;
+}
+
+.solicitacao-botoes a:nth-child(2):hover {
+    background-color: #cc2525;
+}

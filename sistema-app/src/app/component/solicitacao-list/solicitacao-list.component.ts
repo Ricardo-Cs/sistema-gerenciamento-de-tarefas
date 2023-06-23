@@ -3,6 +3,8 @@ import { IList } from '../i-list';
 import { Solicitacao } from 'src/app/model/solicitacao';
 import { SolicitacaoService } from 'src/app/service/solicitacao.service';
 import { LoginService } from 'src/app/service/login.service';
+import { TarefasService } from 'src/app/service/tarefas.service';
+import { Tarefas } from 'src/app/model/tarefas';
 
 @Component({
   selector: 'app-solicitacao-list',
@@ -12,6 +14,7 @@ import { LoginService } from 'src/app/service/login.service';
 export class SolicitacaoListComponent implements OnInit, IList<Solicitacao> {
   constructor (
     private service: SolicitacaoService,
+    private serviceTarefas: TarefasService,
     private serviceLogin: LoginService
   ) { }
 
@@ -46,7 +49,7 @@ export class SolicitacaoListComponent implements OnInit, IList<Solicitacao> {
   }
 
   delete(id: number): void {
-    if (confirm('Deseja realmente excluir a tarefa?')) {
+    if (confirm('Deseja realmente excluir a solicitaçao?')) {
       this.service.delete(id).subscribe({
         complete: () => {
           this.get();
@@ -56,6 +59,35 @@ export class SolicitacaoListComponent implements OnInit, IList<Solicitacao> {
           // });
         }
       });
+    }
+  }
+
+  rejectSolicitacao(id: number): void {
+    if (confirm('Deseja realmente rejeitar a solicitação?')) {
+      this.service.delete(id).subscribe({
+        complete: () => {
+          this.get();
+          // this.servicoAlerta.enviarAlerta({
+          //   tipo: ETipoAlerta.SUCESSO,
+          //   mensagem: "Operação realizada com sucesso."
+          // });
+        }
+      });
+    }
+  }
+
+  acceptSolicitacao(objeto: Tarefas, id: number): void {
+    if(confirm('Deseja realmente aceitar a solicitação?')) {
+      objeto.profissional = this.serviceLogin.getProfissional();
+      this.serviceTarefas.update(objeto).subscribe({
+        complete: () => {
+          this.service.delete(id).subscribe({
+            complete: () => {
+                this.get();
+            },
+          })
+        },
+      })
     }
   }
 
