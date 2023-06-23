@@ -1,0 +1,10 @@
+<div id="comandos">
+    <a routerLink="./form" class="add-tarefa">Adicionar</a>
+    <div>
+        <form>
+            <label for="busca">Busca: </label>
+            <input type="search" name="busca" placeholder="Digite para buscar..." #termoBusca="ngModel" ngModel
+                (ngModelChange)="busca(termoBusca.value)">
+        </form>
+    </div>
+</div>

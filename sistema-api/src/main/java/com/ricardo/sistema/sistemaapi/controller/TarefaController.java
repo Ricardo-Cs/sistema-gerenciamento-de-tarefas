@@ -39,6 +39,12 @@ public class TarefaController implements IController<Tarefa>{
         return new ResponseEntity<>(registros, HttpStatus.OK);
     }
 
+    @GetMapping("/busca/{termoBusca}")
+    public ResponseEntity<List<Tarefa>> get(@PathVariable("termoBusca") String termoBusca) {
+        List<Tarefa> registros = service.get(termoBusca);
+        return new ResponseEntity<>(registros, HttpStatus.OK);
+    }
+
     @Override
     @GetMapping("/{id}")
     public ResponseEntity<Tarefa> get(@PathVariable("id") Long id) {

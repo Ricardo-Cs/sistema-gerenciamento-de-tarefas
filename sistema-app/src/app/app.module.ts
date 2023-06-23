@@ -10,6 +10,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RequisicaoInterceptor } from './interceptor/requisicao.interceptor';
 import { TarefasFormComponent } from './component/tarefas-form/tarefas-form.component';
 import { SolicitacaoListComponent } from './component/solicitacao-list/solicitacao-list.component';
+import { BarraComandosComponent } from './component/barra-comandos/barra-comandos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SolicitacaoListComponent } from './component/solicitacao-list/solicitac
     TarefasListComponent,
     TarefasFormComponent,
     LoginComponent,
-    SolicitacaoListComponent
+    SolicitacaoListComponent,
+    BarraComandosComponent
   ],
   imports: [
     BrowserModule,

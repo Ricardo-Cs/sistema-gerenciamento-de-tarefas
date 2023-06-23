@@ -1,0 +1,17 @@
+#comandos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#comandos .add-tarefa {
+    background-color: #3ec13a;
+    color: #FFF;
+    font-weight: bold;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+input[type="search"] {
+    padding: 0.2rem;
+}

@@ -45,6 +45,10 @@ public class TarefaService implements IService<Tarefa> {
         return tarefas;
     }
 
+    public List<Tarefa> get(String termoBusca) {
+        return repo.findByAll(termoBusca);
+    }
+
     public Tarefa updateStatus(Long id) {
         Tarefa registro = repo.findById(id).orElse(null);
         registro.setStatus(registro.getStatus().proximo());

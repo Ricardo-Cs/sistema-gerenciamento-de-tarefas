@@ -15,7 +15,7 @@
             <td>{{item.tarefa.title}}</td>
             <td>{{item.profissionalSolicitante.nome}}</td>
             <td *ngIf="isGerente()">{{item.profissionalSolicitado.nome}}</td>
-            <td>{{item.data}}</td>
+            <td>{{item.data | date:'dd/MM/yyyy'}}</td>
             <td>{{item.status}}</td>
             <td *ngIf="isGerente()">
                 <a (click)="delete(item.id)" *ngIf="isGerente()">
