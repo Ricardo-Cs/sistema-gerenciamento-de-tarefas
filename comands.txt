@@ -1,0 +1,23 @@
+Antes dos comandos, você deve ter algumas dependências instaladas na sua máquina, sendo elas:
+    Front-end: 
+    - Node.js (v18.16.0)
+    - Angular CLI (v15.2.4)
+
+    Back-end:
+    - Java Development Kit (JDK v17.0.6)
+    - Apache Maven (v3.9.1)
+
+    Banco de dados: 
+    - Mysql (rodando na porta 3306)
+
+
+Comandos para iniciar a aplicação: 
+    Front-end (Angular): 
+    - Entre na pasta sistema-app pelo terminal
+    - Digite: npm install
+    - Após baixar as dependências com o comando acima, rode o servidor com o comando: ng serve
+
+    Back-end (Java): 
+    - Entre na pasta sistema-api pelo terminal
+    - Digite: mvn spring-boot:run
+    - (O mysql deve estar rodando na porta 3306 para o comando acima funcionar)
