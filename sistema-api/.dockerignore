@@ -1,0 +1,11 @@
+src/
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+target/surefire-reports/
+target/classes/
+target/generated-sources/
+target/maven-archiver/
+target/maven-status/
+target/*.jar.original
